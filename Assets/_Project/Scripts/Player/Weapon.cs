@@ -1,50 +1,16 @@
-using StarterAssets;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour
+public class Weapon : MonoBehaviour, IWeapon
 {
-    private RaycastHit _hit;
-    private StarterAssetsInputs _input;
-    private Camera _camera;
-    private const float MaxRange = 25f;
-
-    private void Awake()
+    [SerializeField] private int damage = 1;    
+    public void Fire(IDamageable target)
     {
-        _camera = Camera.main;
-        _input = GetComponentInParent<StarterAssetsInputs>();
-    }
-    
-    private void Update()
-    {
-        ShootLogic();
-    }
-    
-    private void ShootLogic()
-    {
-
-        if (!_input.shoot)
+        if (target == null)
         {
+            Debug.Log("No IDamageable target found");
             return;
         }
-
-        if (!Physics.Raycast(_camera.transform.position, _camera.transform.forward, out _hit, MaxRange))
-        {
-            return;
-        }
-
-        Debug.Log(_hit.transform.name);
-        _input.ShootInput(false);
+        target.TakeDamage(damage);
+        Debug.Log("Fired at " + target);
     }
-
-    private void OnDrawGizmos()
-    {
-        if (_camera == null)
-        {
-            return;
-        }
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(_camera.transform.position, _camera.transform.position + _camera.transform.forward * MaxRange);
-    }
-
-
 }
