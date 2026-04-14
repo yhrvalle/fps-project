@@ -829,6 +829,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 424276733}
+  - component: {fileID: 424276734}
   m_Layer: 3
   m_Name: Pistol
   m_TagString: Untagged
@@ -852,6 +853,18 @@ Transform:
   - {fileID: 974605783}
   m_Father: {fileID: 37040255}
   m_LocalEulerAnglesHint: {x: 0, y: 89.617, z: 0}
+--- !u!114 &424276734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424276732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990a1fb144eb4c5d6a85da40a0e89fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Weapon
 --- !u!1 &579878333
 GameObject:
   m_ObjectHideFlags: 0
@@ -1651,6 +1664,34 @@ Transform:
   - {fileID: 1108069619}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1558018285 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7436214671823156193, guid: a2d5564aec0ed333899e80b8b7a4eb3e, type: 3}
+  m_PrefabInstance: {fileID: 4046892703499955529}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &1558018291
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558018285}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1585546506
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1807,6 +1848,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 813874423397949937, guid: a2d5564aec0ed333899e80b8b7a4eb3e, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1175508050506878846, guid: a2d5564aec0ed333899e80b8b7a4eb3e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.0282938
@@ -1854,7 +1899,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7436214671823156193, guid: a2d5564aec0ed333899e80b8b7a4eb3e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1558018291}
   m_SourcePrefab: {fileID: 100100000, guid: a2d5564aec0ed333899e80b8b7a4eb3e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
