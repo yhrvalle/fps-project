@@ -3,7 +3,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    private const string ShootString = "Shoot";
     [SerializeField] private ParticleSystem muzzleFlash;
+    [SerializeField] private Animator animator;
     private IWeapon _weapon;
     private Camera _camera;
     private StarterAssetsInputs _inputs;
@@ -28,12 +30,14 @@ public class Player : MonoBehaviour
     private void TryShoot()
     {
         IDamageable target = null;
-        
+        muzzleFlash.Play();
+        animator.Play(ShootString, 0, 0f);
+        _inputs.ShootInput(false);
         if (!Physics.Raycast(_camera.transform.position, _camera.transform.forward, out RaycastHit hit, Mathf.Infinity))
         {
             return;
         }
-        muzzleFlash.Play();
+        
         target = hit.collider.GetComponent<IDamageable>(); // if the target doesnt have this interface = null
         _weapon.Fire(target);
     }
