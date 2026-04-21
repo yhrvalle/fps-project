@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour, IWeapon
 {
-    [SerializeField] private int damage = 1;    
+    [SerializeField] private int damage = 1;
+    
+    
     public void Fire(IDamageable target)
     {
         if (target == null)

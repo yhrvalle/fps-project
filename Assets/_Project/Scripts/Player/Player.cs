@@ -3,9 +3,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private ParticleSystem muzzleFlash;
     private IWeapon _weapon;
-    
-    
     private Camera _camera;
     private StarterAssetsInputs _inputs;
     
@@ -34,7 +33,7 @@ public class Player : MonoBehaviour
         {
             return;
         }
-        
+        muzzleFlash.Play();
         target = hit.collider.GetComponent<IDamageable>(); // if the target doesnt have this interface = null
         _weapon.Fire(target);
     }
