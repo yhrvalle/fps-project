@@ -874,6 +874,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   muzzleFlash: {fileID: 6443974213018727508}
+  hitVFX: {fileID: 4847806552527480695, guid: 9ae374fc385ef5268bac709b2ce49f3c, type: 3}
   animator: {fileID: 320141693}
 --- !u!1 &579878333
 GameObject:
@@ -1281,7 +1282,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -2079,6 +2080,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4657103686252521320, guid: e775ba107a6665bdfafe32685c2a6428, type: 3}
       propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657103686252521320, guid: e775ba107a6665bdfafe32685c2a6428, type: 3}
+      propertyPath: startDelay.scalar
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

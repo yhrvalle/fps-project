@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FX_GunFlash
+  m_Name: FX_GunFlash 1
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -120,9 +120,9 @@ Material:
     - _XRMotionVectorsPass: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.23492157, g: 1, b: 0, a: 1}
-    - _Color: {r: 0.23492154, g: 1, b: 0, a: 1}
-    - _EmissionColor: {r: 4.8279376, g: 4.790088, b: 0.37718263, a: 1}
+    - _BaseColor: {r: 0.32604212, g: 1, b: 0, a: 1}
+    - _Color: {r: 0.3260421, g: 1, b: 0, a: 1}
+    - _EmissionColor: {r: 0.056260902, g: 0.43019897, b: 0.12662211, a: 1}
     - _EmissionColorUI: {r: 1, g: 0.22758618, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []

@@ -5,6 +5,7 @@ public class Player : MonoBehaviour
 {
     private const string ShootString = "Shoot";
     [SerializeField] private ParticleSystem muzzleFlash;
+    [SerializeField] private ParticleSystem hitVFX;
     [SerializeField] private Animator animator;
     private IWeapon _weapon;
     private Camera _camera;
@@ -37,7 +38,7 @@ public class Player : MonoBehaviour
         {
             return;
         }
-        
+        Instantiate(hitVFX, hit.point, hit.transform.rotation);
         target = hit.collider.GetComponent<IDamageable>(); // if the target doesnt have this interface = null
         _weapon.Fire(target);
     }
