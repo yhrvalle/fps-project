@@ -1680,29 +1680,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7436214671823156193, guid: a2d5564aec0ed333899e80b8b7a4eb3e, type: 3}
   m_PrefabInstance: {fileID: 4046892703499955529}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &1558018291
-CapsuleCollider:
+--- !u!95 &1558018292
+Animator:
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1558018285}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 072256f25a8df9bc2952c0a24b69aae8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1585546506
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1956,25 +1955,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 382328762867490827, guid: a2d5564aec0ed333899e80b8b7a4eb3e, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 813874423397949937, guid: a2d5564aec0ed333899e80b8b7a4eb3e, type: 3}
-      propertyPath: m_StoppingDistance
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 1175508050506878846, guid: a2d5564aec0ed333899e80b8b7a4eb3e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.0282938
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1175508050506878846, guid: a2d5564aec0ed333899e80b8b7a4eb3e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1175508050506878846, guid: a2d5564aec0ed333899e80b8b7a4eb3e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.4466722
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1175508050506878846, guid: a2d5564aec0ed333899e80b8b7a4eb3e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2014,7 +2005,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7436214671823156193, guid: a2d5564aec0ed333899e80b8b7a4eb3e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1558018291}
+      addedObject: {fileID: 1558018292}
   m_SourcePrefab: {fileID: 100100000, guid: a2d5564aec0ed333899e80b8b7a4eb3e, type: 3}
 --- !u!198 &6443974213018727508 stripped
 ParticleSystem:
