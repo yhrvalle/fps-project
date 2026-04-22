@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour, IWeapon
 {
-    [SerializeField] private int damage = 1;
+    [SerializeField] private WeaponSO weaponSo;
     
     
     public void Fire(IDamageable target)
@@ -12,7 +12,7 @@ public class Weapon : MonoBehaviour, IWeapon
             Debug.Log("No IDamageable target found");
             return;
         }
-        target.TakeDamage(damage);
+        target.TakeDamage(weaponSo.Damage);
         Debug.Log("Fired at " + target);
     }
 }
