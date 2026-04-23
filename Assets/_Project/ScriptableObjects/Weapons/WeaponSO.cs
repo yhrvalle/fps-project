@@ -7,11 +7,13 @@ public class WeaponSO : ScriptableObject
     [SerializeField] private float fireRate;
     [SerializeField] private bool isAutomatic;
     [SerializeField] private GameObject weaponPrefab;
+    [SerializeField] private bool canZoom = false;
     
     public float FireRate => fireRate;
     public int Damage => damage;
     public bool IsAutomatic => isAutomatic;
     public GameObject WeaponPrefab => weaponPrefab;
+    public bool CanZoom => canZoom;
 }
 
 

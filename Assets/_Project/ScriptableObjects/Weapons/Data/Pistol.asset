@@ -16,3 +16,4 @@ MonoBehaviour:
   fireRate: 0.75
   isAutomatic: 0
   weaponPrefab: {fileID: 6997394835541460758, guid: 96b8eed739431c8f9ba6f6b07ba2e089, type: 3}
+  canZoom: 0
