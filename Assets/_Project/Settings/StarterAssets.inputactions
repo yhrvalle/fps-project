@@ -233,7 +233,7 @@
                     "name": "",
                     "id": "c0d31f7e-9e60-4b3f-b5c9-f80891c328be",
                     "path": "<Mouse>/leftButton",
-                    "interactions": "",
+                    "interactions": "Press(behavior=2)",
                     "processors": "",
                     "groups": ";KeyboardMouse",
                     "action": "Shoot",

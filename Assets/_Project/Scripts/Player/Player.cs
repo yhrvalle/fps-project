@@ -8,7 +8,8 @@ public class Player : MonoBehaviour
     [SerializeField] private ParticleSystem muzzleFlash;
     [SerializeField] private ParticleSystem hitVFX;
     [SerializeField] private Animator animator;
-    private IWeapon _weapon;
+    [SerializeField] private Transform weaponHolder;
+    private Weapon _weapon;
     private Camera _camera;
     private StarterAssetsInputs _inputs;
     private float _timeSinceLastShot = 0f;
@@ -17,7 +18,7 @@ public class Player : MonoBehaviour
     {
         _camera = Camera.main;
         _inputs = GetComponent<StarterAssetsInputs>();
-        _weapon = GetComponentInChildren<IWeapon>();
+        _weapon = GetComponentInChildren<Weapon>();
     }
     
     private void Update()
@@ -30,14 +31,17 @@ public class Player : MonoBehaviour
 
         TryShoot();
         _timeSinceLastShot = 0f;
-        _inputs.ShootInput(false);
+        
     }
     private void TryShoot()
     {
+        if (!weaponSO.IsAutomatic)
+        {
+            _inputs.ShootInput(false);
+        }
         IDamageable target = null;
         muzzleFlash.Play();
         animator.Play(ShootString, 0, 0f);
-        _inputs.ShootInput(false);
         if (!Physics.Raycast(_camera.transform.position, _camera.transform.forward, out RaycastHit hit, Mathf.Infinity))
         {
             return;
@@ -46,6 +50,17 @@ public class Player : MonoBehaviour
         target = hit.collider.GetComponent<IDamageable>(); // if the target doesnt have this interface = null
         _weapon.Fire(target, weaponSO);
     }
-        
+
+    public void SwitchWeapon(WeaponSO weaponSo)
+    {
+        if (_weapon)
+        {
+            Destroy(_weapon.gameObject);
+        }
+
+        Weapon nextWeapon = Instantiate(weaponSo.WeaponPrefab, weaponHolder).GetComponent<Weapon>();
+        this.weaponSO = weaponSo;
+        _weapon = nextWeapon;
+    }
 
 }
