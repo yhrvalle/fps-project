@@ -17,3 +17,5 @@ MonoBehaviour:
   isAutomatic: 0
   weaponPrefab: {fileID: 2752877782726265638, guid: 3b588489a886736cc86b0e9a443b7d29, type: 3}
   canZoom: 1
+  zoomedFOV: 10
+  zoomedCameraSpeed: 0.3

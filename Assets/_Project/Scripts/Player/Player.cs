@@ -13,12 +13,13 @@ public class Player : MonoBehaviour
     [SerializeField] private ParticleSystem hitVFX;
     [SerializeField] private Animator animator;
     [SerializeField] private Transform weaponHolder;
+    private FirstPersonController _controller;
     private Weapon _weapon;
     private Camera _camera;
     private StarterAssetsInputs _inputs;
     private float _timeSinceLastShot = 0f;
     private float _originalFOV;
-    private float _zoomedFOV = 15f;
+    private float _originalCameraSpeed;
     
     
     private void Awake()
@@ -26,6 +27,8 @@ public class Player : MonoBehaviour
         _camera = Camera.main;
         _inputs = GetComponent<StarterAssetsInputs>();
         _weapon = GetComponentInChildren<Weapon>();
+        _controller = GetComponent<FirstPersonController>();
+        _originalCameraSpeed = _controller.RotationSpeed;
         if (_camera != null)
         {
             _originalFOV = _camera.fieldOfView;
@@ -85,13 +88,15 @@ public class Player : MonoBehaviour
         }
         if (_inputs.zoom)
         {
-            _cinemachineVirtualCamera.m_Lens.FieldOfView = _zoomedFOV;
+            _cinemachineVirtualCamera.m_Lens.FieldOfView = weaponSo.ZoomedFOV;
+            _controller.ChangeRotationSpeed(weaponSo.ZoomedCameraSpeed);
             zoomVignette.SetActive(true);
         }
         else
         {
             _cinemachineVirtualCamera.m_Lens.FieldOfView =  _originalFOV;
             zoomVignette.SetActive(false);
+            _controller.ChangeRotationSpeed(_originalCameraSpeed);
         }
         
         Debug.Log(_inputs.zoom ? "Zooming" : "Not zooming");

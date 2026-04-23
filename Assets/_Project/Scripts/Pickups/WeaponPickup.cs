@@ -1,18 +1,11 @@
 using UnityEngine;
 
-public class WeaponPickup : MonoBehaviour
+public class WeaponPickup : BasePickup
 {
     [SerializeField] private WeaponSO weaponSo;
-    private const string PlayerTag = "Player";
-    private void OnTriggerEnter(Collider other)
+    
+    protected override void OnPickup(Player player)
     {
-        if (!other.CompareTag(PlayerTag))
-        {
-            return;
-        }
-
-        Player player = other.GetComponent<Player>();
         player.SwitchWeapon(weaponSo);
-        Destroy(gameObject);
     }
 }
